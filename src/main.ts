@@ -1,4 +1,12 @@
 import { createApp } from 'vue'
+import { store } from './store'
 import App from './App.vue'
+import router from "./router/index"
+import { plugin, defaultConfig } from '@formkit/vue'
+import {dateCustomRule} from "./utility/dateCustomRule"
 
-createApp(App).mount('#app')
+
+createApp(App).use(plugin, defaultConfig({
+    rules:{dateCustomRule}
+})).use(router).use(store).mount('#app')
+  

@@ -1,7 +1,7 @@
 <template>
   <div class="loginScreen">
   <h1>Login Page</h1>
-    <FormKit type="form" :action=false >
+    <FormKit type="form" :action=false @submit="signUpUser">
       <FormKit 
       type="text" 
       label="User ID"
@@ -18,23 +18,18 @@
      validation="required"
      validation-visibility="live"
      />
-    <FormKit
-    type="password"
-    label="Confirm Password"
-    name="password_confirm"
-    placeholder="Confirm Password"
-    validation="required|confirm"
-    validation-visibility="live"
-    validation-label="Password Confirmation"
-    />
-
      </FormKit>
   </div>
 </template>
 
 <script>
 export default {
-  name: "LoginPage",
+  name: "loginPage",
+  methods:{
+    signUpUser(e){
+      console.log( e ,"Event");
+    }
+  }
 
   
 };

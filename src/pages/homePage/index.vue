@@ -30,16 +30,16 @@ export default {
 </script>
  <template>
   Home   
-  <!-- <FormKit
-  type="text"
-  label="Kitchen renovation budget"
-  help="Enter the most you'd like to spend on your kitchen renovation."
-  validation="dateCustomRule"
-  validation-visibility="live"
-  :validation-messages="{
-    'min': 'Sorry —we only build high end kitchens. Try Budget Builders.'
-  }" -->
-/>
+    <!-- <FormKit
+    type="text"
+    label="Kitchen renovation budget"
+    help="Enter the most you'd like to spend on your kitchen renovation."
+    validation="dateCustomRule"
+    validation-visibility="live"
+    :validation-messages="{
+      'min': 'Sorry —we only build high end kitchens. Try Budget Builders.'
+    }"
+  />-->
   <FormKit
   type="text"
   label="Birthday"
@@ -47,13 +47,14 @@ export default {
   validation="required|date_formate:MM/YY|dateCustomRule"
   validation-visibility="live"
   :validation-messages="{
-    date_formate:'Not in expected formate',
+    dateCustomRule:'Not in expected formate',
     date_after: 'Sorry — no olds allowed.',
   }"
-/>
+  />
   <!-- <input type="date" :min="current"/>
   <input type="text" :min="current"/> -->
-  {{current}}{{currentvalue}}
+  {{current}}::{{currentvalue}}
 </template>
+
  <style>
 </style>

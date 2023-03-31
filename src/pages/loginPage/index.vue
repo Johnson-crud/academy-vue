@@ -1,21 +1,25 @@
 <template>
   <div class="loginScreen">
-    <FormKit type="form" :action=false >
-      <FormKit 
-      type="text" 
-      validation="required|length:8,10" 
-      validation-visibility="live" 
-      placeholder="Enter UserId"
-      :validation-messages="{length:' Length should be between 8 - 10 character '}"
-     />
-      <FormKit 
-      type="pass" 
-      validation="required|length:8,10" 
-      validation-visibility="live" 
-      placeholder="Enter UserId"
-      :validation-messages="{length:' Length should be between 8 - 10 character '}"
-     />
-  </FormKit>
+    <FormKit class="form" type="form" :action="false">
+      <FormKit
+        type="text"
+        validation="required"
+        validation-visibility="live"
+        placeholder="Enter UserId"
+        :validation-messages="{
+          required: 'This field is required.',
+        }"
+      />
+      <FormKit
+        type="password"
+        validation="required"
+        validation-visibility="live"
+        placeholder="Enter Password"
+        :validation-messages="{
+          required: 'This field is required.',
+        }"
+      />
+    </FormKit>
   </div>
 </template>
 
@@ -25,35 +29,17 @@ export default {
 };
 </script>
 
-<style scoped>
-  .chat-notification {
-    display: flex;
-    max-width: 24rem;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: #fff;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  }
-  .chat-notification-logo-wrapper {
-    flex-shrink: 0;
-  }
-  .chat-notification-logo {
-    height: 3rem;
-    width: 3rem;
-  }
-  .chat-notification-content {
-    margin-left: 1.5rem;
-    padding-top: 0.25rem;
-  }
-  .chat-notification-title {
-    color: #1a202c;
-    font-size: 1.25rem;
-    line-height: 1.25;
-  }
-  .chat-notification-message {
-    color: #718096;
-    font-size: 1rem;
-    line-height: 1.5;
-  }
+<style>
+.formkit-form {
+  width: 420px;
+  padding: 1.5em;
+  border: 1px solid #e4e4e4;
+  border-radius: 1em;
+  margin: 0 auto 1em auto;
+}
+.formkit-input {
+  padding: 2px;
+  border: 1px solid #e4e4e4;
+  margin: 0 auto 1em auto;
+}
 </style>
